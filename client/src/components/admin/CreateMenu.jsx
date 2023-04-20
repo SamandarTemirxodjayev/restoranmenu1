@@ -17,12 +17,12 @@ export default function CreateMenu() {
   const imageRef = useRef(null);
 
   useEffect(() => {
-    axios.get("https://restoran-server-project.vercel.app/menu")
+    axios.get("https://restoranmenu1.vercel.app/menu")
       .then(res => {
         setMenu(res.data.menus);
       })
     
-    axios.get("https://restoran-server-project.vercel.app/catalog")
+    axios.get("https://restoranmenu1.vercel.app/catalog")
       .then(res => {
         setCatalog(res.data.catalogs);
         setLoading(false);
@@ -40,7 +40,7 @@ export default function CreateMenu() {
     const storageRef = ref(storage, pathFile);
     uploadBytes(storageRef, file).then((snapshot) => {
       getDownloadURL(snapshot.ref).then((downloadURL) => {
-        axios.put("https://restoran-server-project.vercel.app/menu", {
+        axios.put("https://restoranmenu1.vercel.app/menu", {
             name: name,
             photo_url: downloadURL,
             description: description,
@@ -65,7 +65,7 @@ export default function CreateMenu() {
   }
   function handleDelete(id) {
     setLoading(true);
-    axios.delete(`https://restoran-server-project.vercel.app/menu/${id}`)
+    axios.delete(`https://restoranmenu1.vercel.app/menu/${id}`)
       .then(res => {
         window.location.reload();
       })

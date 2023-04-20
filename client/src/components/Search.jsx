@@ -9,7 +9,7 @@ export default function Search() {
   const [originalResults, setOriginalResults] = useState([]);
 
   useEffect(() => {
-    axios.get("https://restoran-server-project.vercel.app/menu").then((res) => {
+    axios.get("https://restoranmenu1.vercel.app/menu").then((res) => {
       // setSearchResults(res.data.menus);
       setOriginalResults(res.data.menus);
     });

@@ -11,12 +11,12 @@ export default function Menu({ id }) {
   const [loading, setLoading] = React.useState(true);
   useEffect(() => {
     axios
-      .get("https://restoran-server-project.vercel.app/catalog")
+      .get("https://restoranmenu1.vercel.app/catalog")
       .then((res) => {
         setCatalog(res.data.catalogs);
       });
     axios
-      .get("https://restoran-server-project.vercel.app/menu")
+      .get("https://restoranmenu1.vercel.app/menu")
       .then((res) => {
         setMenu(res.data.menus);
         setTimeout(() => {

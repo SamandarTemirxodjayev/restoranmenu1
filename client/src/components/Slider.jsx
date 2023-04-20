@@ -13,7 +13,7 @@ function Slider() {
   const [ photos, setPhotos ] = useState([]);
 
   useEffect(() => {
-    axios.get('https://restoran-server-project.vercel.app/banner')
+    axios.get('https://restoranmenu1.vercel.app/banner')
     .then(response => {
       setPhotos(response.data.banners);
     })

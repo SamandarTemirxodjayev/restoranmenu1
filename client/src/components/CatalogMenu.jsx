@@ -9,7 +9,7 @@ export default function CatalogMenu() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get(`https://restoran-server-project.vercel.app/catalogMenus/${id}`)
+    axios.get(`https://restoranmenu1.vercel.app/catalogMenus/${id}`)
     .then((res) => {
         setLoading(true); 
         setMenu(res.data.menus);

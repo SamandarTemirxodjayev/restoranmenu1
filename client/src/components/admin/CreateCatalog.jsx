@@ -8,7 +8,7 @@ export default function CreateCatalog() {
   const [ loading, setLoading ] = useState(true);
 
   useEffect(() => {
-    axios.get("https://restoran-server-project.vercel.app/catalog")
+    axios.get("https://restoranmenu1.vercel.app/catalog")
     .then(res => {
         setCatalog(res.data.catalogs);
         setLoading(false);
@@ -18,7 +18,7 @@ export default function CreateCatalog() {
   function handleSubmit(e) {
     e.preventDefault();
     setLoading(true);
-    axios.put("https://restoran-server-project.vercel.app/catalog", {
+    axios.put("https://restoranmenu1.vercel.app/catalog", {
         name: name
     })
     .then(res => {
@@ -30,7 +30,7 @@ export default function CreateCatalog() {
   }
   function handleDelete(id) {
     setLoading(true);
-    axios.delete(`https://restoran-server-project.vercel.app/catalog/${id}`)
+    axios.delete(`https://restoranmenu1.vercel.app/catalog/${id}`)
       .then(res => {
         window.location.reload();
       })

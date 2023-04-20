@@ -12,7 +12,7 @@ export default function Home() {
   const { id } = useParams();
 
   useEffect(() => {
-    axios.get('https://restoran-server-project.vercel.app/catalog')
+    axios.get('https://restoranmenu1.vercel.app/catalog')
       .then(response => {
         setCatalogs(response.data.catalogs);
       })

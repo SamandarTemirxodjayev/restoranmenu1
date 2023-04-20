@@ -13,10 +13,10 @@ export default function MenuItem() {
 
   useEffect(() => {
     axios
-      .get("https://restoran-server-project.vercel.app/menu/" + id)
+      .get("https://restoranmenu1.vercel.app/menu/" + id)
       .then((res) => {
         setMenu(res.data.menu);
-        axios.get(`https://restoran-server-project.vercel.app/catalogMenus/${res.data.menu.category_id}`)
+        axios.get(`https://restoranmenu1.vercel.app/catalogMenus/${res.data.menu.category_id}`)
         .then((res) => {
             setCategory(res.data.menus);
           });

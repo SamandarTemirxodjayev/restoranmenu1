@@ -11,7 +11,7 @@ export default function CreateBanner() {
   const imageRef = useRef(null);
 
   useEffect(() => {
-    axios.get("https://restoran-server-project.vercel.app/banner")
+    axios.get("https://restoranmenu1.vercel.app/banner")
     .then(res => {
         console.log(res.data.banners);
         setCatalog(res.data.banners);
@@ -30,7 +30,7 @@ export default function CreateBanner() {
       getDownloadURL(snapshot.ref).then((downloadURL) => {
         console.log(downloadURL);
         axios
-          .put("https://restoran-server-project.vercel.app/banner", {
+          .put("https://restoranmenu1.vercel.app/banner", {
             photo_url: downloadURL,
           })
           .then((res) => {
@@ -47,7 +47,7 @@ export default function CreateBanner() {
   
   function handleDelete(id) {
     setLoading(true);
-    axios.delete(`https://restoran-server-project.vercel.app/banner/${id}`)
+    axios.delete(`https://restoranmenu1.vercel.app/banner/${id}`)
       .then(res => {
         window.location.reload()
         setLoading(false);
