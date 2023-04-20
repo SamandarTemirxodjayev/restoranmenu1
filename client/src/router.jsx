@@ -11,7 +11,7 @@ import NotFound from "./components/NotFound";
 
 export default function Router() {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<GetStarted />} />
         <Route path="/home" element={<Home />} />
@@ -24,6 +24,6 @@ export default function Router() {
         <Route path="/admin/create/banner" element={<CreateBanner />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
