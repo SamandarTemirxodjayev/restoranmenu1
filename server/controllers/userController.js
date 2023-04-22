@@ -152,20 +152,20 @@ exports.deleteMenu = (req, res) => {
       res.status(500).json({ message: "Error deleting menu" });
     });
 };
-exports.getCatalogMenus = (req, res) => {
-  const {id} = req.params;
+exports.getCatalogMenus = async (req, res) => {
+  const { id } = req.params;
   if (!id) {
     return res.status(400).json({ message: "Catalog id is required" });
   }
-  Menu.find({category_id: id})
-  .then((menus) => {
-      res.status(200).res.json({menus});
-    })
-  .catch((err) => {
-      console.error(err);
-      res.status(500).json({ message: "Error retrieving menus" });
-    });
+  try {
+    const menus = await Menu.find({ category_id: id });
+    res.status(200).json({ menus });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: "Error retrieving menus" });
+  }
 }
+
 exports.getMenuById = (req, res) => {
   const { id } = req.params;
   if (!id) {
