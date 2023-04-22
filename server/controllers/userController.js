@@ -159,11 +159,11 @@ exports.getCatalogMenus = (req, res) => {
   }
   Menu.find({category_id: id})
   .then((menus) => {
-      res.json({menus});
+      res.status(200).res.json({menus});
     })
   .catch((err) => {
       console.error(err);
-      res.status(500).json({ message: "Error retrieving menus" });
+      res.status(200).json({ message: "Error retrieving menus" });
     });
 }
 exports.getMenuById = (req, res) => {
