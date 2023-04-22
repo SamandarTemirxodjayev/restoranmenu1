@@ -163,7 +163,7 @@ exports.getCatalogMenus = (req, res) => {
     })
   .catch((err) => {
       console.error(err);
-      res.status(200).json({ message: "Error retrieving menus" });
+      res.status(500).json({ message: "Error retrieving menus" });
     });
 }
 exports.getMenuById = (req, res) => {
